@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+
+const kLightBg = Color.fromRGBO(245, 246, 245, 1);
+const kRed = Color.fromRGBO(255, 0, 0, 1);
+const kAccent = Color.fromRGBO(254, 214, 41, 1);
+const kLightGrey = Color.fromRGBO(236, 236, 236, 1);
+const kDarkGrey = Color.fromRGBO(184, 184, 184, 1);
+const kTeal = Color.fromRGBO(86, 222, 209, 1);
+const kGrayTxt = Color.fromRGBO(135, 135, 135, 1);
+const warmGrey = Color.fromRGBO(146, 146, 146, 1);
+const kGrayTxtOnBlack = Color.fromRGBO(175, 175, 175, 1);
+const kBlack = Color.fromRGBO(0, 0, 0, 1);
+const kWhite = Color.fromRGBO(255, 255, 255, 1);
+const kTealHeadingCount = Color.fromRGBO(0, 211, 189, 1); // Heading Count
+const kLightGray = Color.fromRGBO(239, 239, 239, 1); // Past Booking Date
+const kTextFieldIcon = Color.fromRGBO(32, 14, 50, 1);
+const kTextFieldSuffix = Color.fromARGB(255, 239, 239, 239);
+const kStatusColor = Color.fromRGBO(0, 211, 189, 1);
+const kFontColorPrimary = Color.fromRGBO(255, 255, 255, 1);
+const kSubtitle = Color.fromRGBO(46, 46, 46, 1);
+const kCompleteGreen = Color.fromRGBO(75, 180, 84, 1);
+const kCancelledRed = Color.fromRGBO(206, 72, 72, 1);
+const kOnlineGreen = Color.fromRGBO(103, 202, 57, 1);
+const kOfflineRed = Color.fromRGBO(229, 91, 78, 1);
+const kLighterGrey = Color.fromRGBO(182, 182, 182, 1); // Cancel to slide
+const kCancelRed = Color.fromRGBO(215, 77, 77, 1); // Cancel to slide
+
+const kCalendarBackGround = Color(0xffffffff);
+const kDividerColor = Color(0xffc7c7c7);
+const kBackGround = Color(0xfff2f2f2);
+const kNotificationHourColor = Color(0xff0ccfbd);
+const kLatestActivityHourColor = Color(0xff7b7b7b);
+const kTimeRegionBoarder = Color(0xff000000);
+const kTimeRegionBg = Color(0x21bababa);
+const kAppointmentBoarder = Color(0xffb09214);
+const kAddAppointment = Color(0x21fed629);
+const kAppointmentBoxShadow = Color(0x19000000);
+const kDatePickerFont = Color(0xff2e2e2e);
+const kSelectedSettings = Color(0xff31d3a2);
+const kSelectedSettingsBg = Color(0x0c31d3a2);
+const kStaticsSmallContainer = Color(0xfffed629);
+const kCancelledTextRed = Color(0xffd74d4d);
+const kResultsBox = Color(0xff00d3bd);
+const kBookingButton = Color(0xffe4e4e4);
+const kBorderGrey = Color(0xff979797);
+const kRangeCalendarBorderGrey = Color(0xfffff9de);
+const kDayPickerGrey = Color(0xfff6f6f6);
+const kDisabledDayPickerGrey = Color(0xffc5c5c5);
+const kCustomerProfileTxt = Color(0xff878787);
+const kCustomerProfileTxt2 = Color(0xfffafafa);
+const kAlertBoxDivider = Color(0xff3b3b3b);
+const kContactSupport = Color(0xff5d5d5d);
+const kWordCount = Color(0xff999999);
+const kTwo = Color(0xffa7a7a7);
+const kPhoneField = Color(0xffd7d7d7);
+const barrierColor = Color(0x93f2f2f2);
+
