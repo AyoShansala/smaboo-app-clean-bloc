@@ -8,16 +8,16 @@ class DioClient {
       : dio = Dio(
           BaseOptions(
             baseUrl: ApiEndpoints.baseUrl,
-            connectTimeout: const Duration(5000), //in milisecond
-            receiveTimeout: 30000,
+            connectTimeout: const Duration(milliseconds: 5000), //in milisecond
+            receiveTimeout: const Duration(milliseconds: 30000),
             responseType: ResponseType.plain,
           ),
         ),
         dioAuth = Dio(
           BaseOptions(
             baseUrl: ApiEndpoints.baseUrl,
-            connectTimeout: 5000, //in milisecond
-            receiveTimeout: 30000,
+            connectTimeout: const Duration(milliseconds: 5000), //in milisecond
+            receiveTimeout: const Duration(milliseconds: 30000),
             responseType: ResponseType.plain,
           ),
         )..interceptors.add(AuthorizationInterceptor());

@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:smaboo_app_clean_bloc/core/network/server_error_data.dart';
 import '../locales/locale_keys.g.dart';
-import '../network/server_error_data.dart';
+
 
 
 /// Throws when there's no shared pref data to fetch
@@ -22,7 +24,7 @@ class ServerException implements Exception {
         errorMessage = LocaleKeys.errors_server_requestCancelled.tr();
         unexpectedError = false;
         break;
-      case DioErrorType.connectTimeout:
+      case DioErrorType.connectionTimeout:
         errorMessage = LocaleKeys.errors_server_connectionTimeOut.tr();
         unexpectedError = false;
         break;
@@ -34,15 +36,15 @@ class ServerException implements Exception {
         errorMessage = LocaleKeys.errors_server_sendTimeout.tr();
         unexpectedError = false;
         break;
-      case DioErrorType.response:
+      case DioErrorType.badResponse:
         errorMessage = _handleStatusCode(dioError.response);
         break;
-      case DioErrorType.other:
-        if (dioError.message.contains('SocketException')) {
-          errorMessage = LocaleKeys.errors_server_socketException.tr();
-          unexpectedError = false;
-          break;
-        }
+      case DioErrorType.unknown:
+        // if (dioError.message.contains('SocketException')) {
+        //   errorMessage = LocaleKeys.errors_server_socketException.tr();
+        //   unexpectedError = false;
+        //   break;
+        // }
         errorMessage = LocaleKeys.errors_server_unexpectedError.tr();
         unexpectedError = true;
         break;
@@ -109,53 +111,53 @@ class ServerException implements Exception {
 
   /// Generate Validation Errors (Status 422)
   String? _getDataValidationErrorMessage(Response? response) {
-    try {
-      DioResponseModel res = dioResponseModelFromJson(response?.data);
-      // RescheduleBookingModel rescheduleBookingResponse = rescheduleBookingFromJson(response?.data);
+    // try {
+    //   DioResponseModel res = dioResponseModelFromJson(response?.data);
+    //   // RescheduleBookingModel rescheduleBookingResponse = rescheduleBookingFromJson(response?.data);
 
-      if (res.errors?.businessId != null) {
-        return res.errors?.businessId?.first;
-      }
-      if (res.errors?.roleId != null) {
-        return res.errors?.roleId?.first;
-      }
-      if (res.errors?.email != null) {
-        return res.errors?.email?.first;
-      }
-      if (res.errors?.contactNumber != null) {
-        return res.errors?.contactNumber?.first;
-      }
-      if (res.errors?.name != null) {
-        return res.errors?.name?.first;
-      }
-      if (res.errors?.firebaseUid != null) {
-        return res.errors?.firebaseUid?.first;
-      }
-      if (res.errors?.passwordIsAlreadyReset != null) {
-        return res.errors?.passwordIsAlreadyReset?.first;
-      }
-      if (res.errors?.password != null) {
-        return res.errors?.password?.first;
-      }
-      if (res.errors?.invalidDefaultPassword != null) {
-        return res.errors?.invalidDefaultPassword?.first;
-      }
-      if (res.errors?.invalidCredentials != null) {
-        return res.errors?.invalidCredentials?.first;
-      }
-      if (res.errors?.invalidWorkingHours != null) {
-        return res.errors?.invalidWorkingHours?.first;
-      }
-      // if (res.errors?.assigneeFutureBookings != null) {
-      //   return res.errors?.assigneeFutureBookings?.first;
-      // }
-      if (res.message != null || res.message != "") {
-        return res.message;
-      }
-    } catch (e) {
-      return null;
-    }
-    return null;
+    //   if (res.errors?.businessId != null) {
+    //     return res.errors?.businessId?.first;
+    //   }
+    //   if (res.errors?.roleId != null) {
+    //     return res.errors?.roleId?.first;
+    //   }
+    //   if (res.errors?.email != null) {
+    //     return res.errors?.email?.first;
+    //   }
+    //   if (res.errors?.contactNumber != null) {
+    //     return res.errors?.contactNumber?.first;
+    //   }
+    //   if (res.errors?.name != null) {
+    //     return res.errors?.name?.first;
+    //   }
+    //   if (res.errors?.firebaseUid != null) {
+    //     return res.errors?.firebaseUid?.first;
+    //   }
+    //   if (res.errors?.passwordIsAlreadyReset != null) {
+    //     return res.errors?.passwordIsAlreadyReset?.first;
+    //   }
+    //   if (res.errors?.password != null) {
+    //     return res.errors?.password?.first;
+    //   }
+    //   if (res.errors?.invalidDefaultPassword != null) {
+    //     return res.errors?.invalidDefaultPassword?.first;
+    //   }
+    //   if (res.errors?.invalidCredentials != null) {
+    //     return res.errors?.invalidCredentials?.first;
+    //   }
+    //   if (res.errors?.invalidWorkingHours != null) {
+    //     return res.errors?.invalidWorkingHours?.first;
+    //   }
+    //   // if (res.errors?.assigneeFutureBookings != null) {
+    //   //   return res.errors?.assigneeFutureBookings?.first;
+    //   // }
+    //   if (res.message != null || res.message != "") {
+    //     return res.message;
+    //   }
+    // } catch (e) {
+    //   return null;
+    // }
+    // return null;
   }
 
   @override
