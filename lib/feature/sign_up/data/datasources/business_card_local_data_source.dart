@@ -12,22 +12,24 @@ abstract class BusinessCardLocalDataSource {
 class BusinessCardLocalDataSourceImpl implements BusinessCardLocalDataSource {
   final SharedPreferences sharedPreferences;
 
-  const BusinessCardLocalDataSourceImpl({required this.sharedPreferences,});
+  const BusinessCardLocalDataSourceImpl({
+    required this.sharedPreferences,
+  });
 
   @override
   Future<void> cacheBusinessCardList(BusinessListModel cardListModel) async {
-    sharedPreferences.setString(CachedModelKeys.businessListModel, cardListModel.toString());
+    sharedPreferences.setString(
+        CachedModelKeys.businessListModel, cardListModel.toString());
   }
 
   @override
-  Future<BusinessListModel> getCachedBusinessCardList() async{
-    final jsonString = sharedPreferences.getString(CachedModelKeys.businessListModel);
-    if(jsonString != null){
+  Future<BusinessListModel> getCachedBusinessCardList() async {
+    final jsonString =
+        sharedPreferences.getString(CachedModelKeys.businessListModel);
+    if (jsonString != null) {
       return Future.value(businessListModelFromJson(jsonString));
-    }else{
+    } else {
       throw CacheException();
     }
   }
-
-  
 }

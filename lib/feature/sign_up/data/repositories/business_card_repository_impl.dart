@@ -29,7 +29,7 @@ class BusinessCardRepositoryImpl implements BusinessCardRepository {
         localDataSource.cacheBusinessCardList(businessCardList);
         return Right(businessCardList.toEntity());
       }on ServerException catch (serverException){
-        return Left(ServerFailure());
+        return Left(ServerFailure()); 
       }
     }else{
       try{

@@ -15,5 +15,5 @@ class GetBusinessCardList implements UseCase<List<BusinessCard>, NoParams> {
   @override
   Future<Either<Failure, List<BusinessCard>>> call(NoParams param) async {
     return await businessCardRepository.getBusinessCardList();
-  }
+  } 
 }
