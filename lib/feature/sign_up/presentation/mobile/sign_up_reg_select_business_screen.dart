@@ -126,11 +126,11 @@ class _SelectBusinessScreenState extends State<SelectBusinessScreen> {
                   Expanded(
                     child: BlocBuilder<BusinessCardListBloc,
                         BusinessCardListState>(
-                      // buildWhen: (previous, current) {
-                      //   return (current is BusinessCardListItemSearchSuccess)
-                      //       ? true
-                      //       : false;
-                      // },
+                      buildWhen: (previous, current) {
+                        return (current is BusinessCardListItemSearchSuccess)
+                            ? true
+                            : false;
+                      },
                       builder: (context, state) {
                         return ListView.builder(
                           scrollDirection: Axis.vertical,
@@ -161,35 +161,45 @@ class _SelectBusinessScreenState extends State<SelectBusinessScreen> {
                                           ),
                                         ),
                                       ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            state.businessCardList
-                                                .elementAt(index)
-                                                .name,
-                                            style: TextStyle(
-                                              color: const Color(0xff2e2e2e),
-                                              fontWeight: FontWeight.w500,
-                                              fontFamily: "Poppins",
-                                              fontStyle: FontStyle.normal,
-                                              fontSize: 15.0.w,
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                              child: Text(
+                                                state.businessCardList
+                                                    .elementAt(index)
+                                                    .name,
+                                                    overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                  color: const Color(0xff2e2e2e),
+                                                  fontWeight: FontWeight.w500,
+                                                  fontFamily: "Poppins",
+                                                  fontStyle: FontStyle.normal,
+                                                  fontSize: 15.0.w,
+                                                ),
+                                              ),
                                             ),
-                                          ),
-                                          Text(
-                                            state.businessCardList
-                                                .elementAt(index)
-                                                .address,
-                                            style: TextStyle(
-                                              color: const Color(0xff2e2e2e),
-                                              fontWeight: FontWeight.w400,
-                                              fontFamily: "Poppins",
-                                              fontStyle: FontStyle.normal,
-                                              fontSize: 13.0.w,
+                                            SizedBox(
+                                              width: double.infinity,
+                                              // width: 100,
+                                              child: Text(
+                                                state.businessCardList
+                                                    .elementAt(index)
+                                                    .address,
+                                                      overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                  color: const Color(0xff2e2e2e),
+                                                  fontWeight: FontWeight.w400,
+                                                  fontFamily: "Poppins",
+                                                  fontStyle: FontStyle.normal,
+                                                  fontSize: 13.0.w,
+                                                ),
+                                              ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                       Container(
                                         width: 42.w,

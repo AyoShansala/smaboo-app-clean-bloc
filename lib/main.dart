@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smaboo_app_clean_bloc/feature/sign_in_register/presentation/mobile/sign_in_register_screen.dart';
 import 'package:smaboo_app_clean_bloc/feature/sign_up/presentation/mobile/sign_up_reg_screen.dart';
 import 'package:smaboo_app_clean_bloc/utils/injector.dart';
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
               // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               // useMaterial3: true,
               ),
-          home: SignUpRegisterScreenWrapper(),
+          home: SignInRegisterScreen(),
         );
       },
     );

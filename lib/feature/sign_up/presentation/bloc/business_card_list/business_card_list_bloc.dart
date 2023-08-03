@@ -33,6 +33,7 @@ class BusinessCardListBloc extends Bloc<BusinessCardListEvent, BusinessCardListS
   // }
 
   // this event will call when user tap on the "Select Business" text field view on the UI
+
   Future<FutureOr<void>> _openBusinessList(BusinessCardListOpened event, Emitter<BusinessCardListState> emit) async {
     // If data still not fetched
     if(state is BusinessCardListInitial || state is BusinessCardListLoadFailure) {
@@ -71,4 +72,5 @@ class BusinessCardListBloc extends Bloc<BusinessCardListEvent, BusinessCardListS
 
     emit(BusinessCardListItemSearchSuccess(tempList, businessCardListOriginal: originalList,));
   }
+  
 }
