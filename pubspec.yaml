@@ -47,6 +47,8 @@ dependencies:
   get_it: ^7.6.0
   bloc_concurrency: ^0.2.2
   stream_transform: ^2.1.0
+  shimmer: ^3.0.0
+  sleek_circular_slider: ^2.0.1
   
   #ui related
   flutter_screenutil: ^5.8.4

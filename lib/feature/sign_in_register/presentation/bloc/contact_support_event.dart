@@ -1,4 +1,8 @@
 part of 'contact_support_bloc.dart';
 
 @immutable
-abstract class ContactSupportEvent {}
+abstract class ContactSupportEvent extends Equatable {
+  const ContactSupportEvent();
+}
+
+
